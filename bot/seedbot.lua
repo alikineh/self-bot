@@ -48,7 +48,7 @@ function msg_valid(msg)
   -- Don't process outgoing messages
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return false
+    return true
   end
 
   -- Before bot was started
@@ -69,7 +69,7 @@ function msg_valid(msg)
 
   if not msg.from.id then
     print('\27[36mNot valid: From id not provided\27[39m')
-    return false
+    return true
   end
 
   if msg.from.id == our_id then
@@ -229,7 +229,7 @@ function create_config( )
     sudo_users = {179162978,153862670,186625098},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[ 😐
+    about_text = [[ .
 ]],
     help_text_realm = [[
 Realm Commands:
